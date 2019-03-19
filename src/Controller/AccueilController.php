@@ -21,7 +21,7 @@ class AccueilController extends AbstractController
     public function accueil()
     {
         return $this->render(
-            '/acceuil.html.twig'
+            '/accueil.html.twig'
         );
     }
 
