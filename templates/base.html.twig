@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>{% block title %}Welcome!{% endblock %}</title>
+        {% block stylesheets %}<link rel="stylesheet" type="text/css" href="{{ asset('css/style.css') }}">{% endblock %}
+    </head>
+    <body>
+        {% block menu %}
+            <ul id="menu">
+                <li id="logo">Dragons</li>
+                <li><a href="/accueil">Accueil</a></li>
+                <li><a href="#">Rechercher</a></li> <!-- TODO ajouter le lien vers la page -->
+                <li><a href="#">Combat</a></li> <!-- TODO ajouter le lien vers la page -->
+                <li><a href="#">Se Connecter</a></li> <!-- TODO ajouter le lien vers la page -->
+            </ul>
+        {% endblock %}
+        {% block body %}{% endblock %}
+        {% block javascripts %}{% endblock %}
+        {% block footer %}
+            <div id="footer">
+                <p>Copyright: Dragons 2019</p>
+                <p>Contact: dugrossy.baptiste@gmail.com</p>
+            </div>
+        {% endblock %}
+    </body>
+</html>
