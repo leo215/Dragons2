@@ -9,12 +9,54 @@
 </style>
 
 <div class="example-wrapper">
-    <h1>Hello {{ controller_name }}! ✅</h1>
+    <h1>bienvenue sur notre site ! ✅</h1>
+    <h2>choisir un dragon et une personnalité et valide</h2>
+    <div class="row mx-md-n5">
 
-    This friendly message is coming from:
-    <ul>
-        <li>Your controller at <code><a href="{{ 'C:/wamp64/www/dragondragon/Dragons/src/Controller/RechercheController.php'|file_link(0) }}">src/Controller/RechercheController.php</a></code></li>
-        <li>Your template at <code><a href="{{ 'C:/wamp64/www/dragondragon/Dragons/templates/recherche/index.html.twig'|file_link(0) }}">templates/recherche/index.html.twig</a></code></li>
-    </ul>
+        <div class="col px-md-5">
+            <div class="p-3 border bg-light">
+                {% for i in 0..4 %}
+                    <article>
+                        <h2>Dragon {{ i }}</h2>
+                        <img src="https://via.placeholder.com/150" alt="">
+                        <div class="metadata"> la vie de Dragon {{ i }} </div>
+                        <div class="metadata"> la puissance de Dragon {{ i }}   </div>
+                        <div class="metadata"> la defence de Dragon {{ i }}  </div>
+                        <div class="metadata"> la dex de Dragon {{ i }}</div>
+                        <div> la vitesse de Dragon {{ i }}  </div>
+
+                    </article>
+                {% endfor %}
+            </div>
+            <button type="button" style="width: 200px;" class="btn btn-primary btn-lg">Validé mon choix</button>
+        </div>
+
+        <div class="col px-md-5">
+            <div class="p-3 border bg-light">
+                {% for i in 0..4 %}
+                    <article>
+                        <h2>Personnalite {{ i }}</h2>
+                        <img src="https://via.placeholder.com/150" alt="">
+                        <div class="metadata"> la vie de Personnalite {{ i }} </div>
+                        <div class="metadata"> la puissance de Personnalite {{ i }}</div>
+                        <div class="metadata"> la defence de Personnalite {{ i }} </div>
+                        <div class="metadata"> la dex de Personnalite {{ i }} </div>
+                        <div> la vitesse de Personnalite {{ i }}</div>
+
+                    </article>
+                {% endfor %}
+            </div>
+            <button type="button" style="width: 200px;" class="btn btn-primary btn-lg">Validé mon choix</button>
+        </div>
+
+
+
+
+
+
+    </div>
+
+
+
 </div>
 {% endblock %}
