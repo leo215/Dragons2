@@ -4,7 +4,7 @@
 HOW TO INSTALL:
 -download or fetch the branch of your choice,
 -open a new console,
--got to the project root,
+-go to the project root,
 -use the command: 'php bin\console server:run',
 -open a web brower of your choice,
 -enter the adress '127.0.0.1:8000',
