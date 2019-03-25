@@ -1,12 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="84527d7e-4329-40d0-b96c-84dfb1dc55ea" name="Default Changelist" comment="ajoute des donnée">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/base.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/base.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/comabt/index.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/comabt/index.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/recherche/index.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/recherche/index.html.twig" afterDir="false" />
-    </list>
+    <list default="true" id="84527d7e-4329-40d0-b96c-84dfb1dc55ea" name="Default Changelist" comment="ajoute des donnée" />
     <ignored path="$PROJECT_DIR$/vendor/composer/" />
     <ignored path="$PROJECT_DIR$/vendor/doctrine/annotations/" />
     <ignored path="$PROJECT_DIR$/vendor/doctrine/cache/" />
@@ -125,8 +120,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/templates/comabt/index.html.twig">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="251">
-              <caret line="36" column="52" selection-start-line="36" selection-start-column="52" selection-end-line="36" selection-end-column="52" />
+            <state relative-caret-position="200">
+              <caret line="36" selection-start-line="36" selection-end-line="37" />
               <folding>
                 <element signature="n#style#0;n#button#0;n#div#0;n#!!top" expanded="true" />
               </folding>
@@ -354,7 +349,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1553497154447</updated>
-      <workItem from="1553497156291" duration="12424000" />
+      <workItem from="1553497156291" duration="12833000" />
     </task>
     <task id="LOCAL-00001" summary="ajoute des donnée">
       <created>1553506216540</created>
@@ -367,19 +362,18 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="12424000" />
+    <option name="totallyTimeSpent" value="12833000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
-    <editor active="true" />
     <layout>
       <window_info id="Favorites" side_tool="true" />
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.24962178" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.24962178" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info anchor="bottom" id="Docker" show_stripe_button="false" />
       <window_info anchor="bottom" id="Database Changes" />
       <window_info anchor="bottom" id="Version Control" />
-      <window_info anchor="bottom" id="Terminal" sideWeight="0.49924356" visible="true" weight="0.28921568" />
+      <window_info active="true" anchor="bottom" id="Terminal" sideWeight="0.49924356" visible="true" weight="0.28921568" />
       <window_info anchor="bottom" id="Event Log" sideWeight="0.50075644" side_tool="true" weight="0.28921568" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
@@ -439,8 +433,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/templates/comabt/index.html.twig">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="251">
-          <caret line="36" column="52" selection-start-line="36" selection-start-column="52" selection-end-line="36" selection-end-column="52" />
+        <state relative-caret-position="200">
+          <caret line="36" selection-start-line="36" selection-end-line="37" />
           <folding>
             <element signature="n#style#0;n#button#0;n#div#0;n#!!top" expanded="true" />
           </folding>
