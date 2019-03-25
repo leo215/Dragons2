@@ -1,5 +1,4 @@
-# Dragons2
-# Projet Dragons
+# Projet Dragons / Repository Dragons2
 
 # English
 HOW TO INSTALL:
