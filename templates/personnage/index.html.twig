@@ -1,0 +1,32 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Hello PersonnageController!{% endblock %}
+
+{% block body %}
+<style>
+    .example-wrapper { margin: 1em auto; max-width: 800px; width: 95%; font: 18px/1.5 sans-serif; }
+    .example-wrapper code { background: #F5F5F5; padding: 2px 6px; }
+</style>
+    <div class="jumbotron">
+        <h1 class="display-4">Personnage</h1>
+        <p class="lead">Bienvenue</p>
+        <hr class="my-4">
+    </div>
+
+
+    <div class="example-wrapper">
+
+
+        {{ form_start(form) }}
+        {{ form_row(form.nom, {'label' : 'Nom', 'attr' : {'placeholder': 'Nom'}} ) }}
+        {{ form_row(form.vie, {'label' : 'Vie', 'attr' : {'placeholder': 'Vie'}} ) }}
+        {{ form_row(form.puissance, {'label' : 'Puissance', 'attr' : {'placeholder': '¨Puissance'}} ) }}
+        {{ form_row(form.defense, {'label' : 'Defense', 'attr' : {'placeholder': 'Defense'}} ) }}
+        {{ form_row(form.dex, {'label' : 'Dex', 'attr' : {'placeholder': 'Dex'}} ) }}
+        {{ form_row(form.vitesse, {'label' : 'Vitesse', 'attr' : {'placeholder': 'Vitesse'}} ) }}
+        {{ form_row(form.img, {'label' : 'Image', 'attr' : {'placeholder': 'Image'}} ) }}
+
+        <button type="submit" class="btn btn-success"> Inscription</button>
+        {{ form_end(form)}}
+    </div>
+{% endblock %}
