@@ -15,10 +15,11 @@
             background: #F5F5F5;
             padding: 2px 6px;
         }
-        
+
+        /*utile, ne pas supprimer*/
         #form_valider {
             position: fixed;
-            bottom: 25px;
+            bottom: 50px;
             right: 25px;
         }
     </style>
@@ -89,6 +90,7 @@
         {{ form_end(form) }}
     </div>
     <script type="text/javascript">
+        //simple fonction servant a permettre à l'utilisateur de cliquer sur l'objet entier plutot qu'uniquement sur le minuscule bouton
         function choisirDragon(nb) {
             nb += 1;
             var id = "form_id_" + nb.toString();

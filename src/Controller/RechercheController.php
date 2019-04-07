@@ -8,11 +8,7 @@ use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\Routing\Annotation\Route;
 use App\Entity\Task;
 use Symfony\Component\HttpFoundation\Request;
-use Symfony\Component\Form\Extension\Core\Type\CollectionType;
 use Symfony\Bridge\Doctrine\Form\Type\EntityType;
-use Symfony\Component\Form\Extension\Core\Type\ChoiceType;
-use Symfony\Component\Form\Extension\Core\Type\TextType;
-use Symfony\Component\Form\Extension\Core\Type\DateType;
 use Symfony\Component\Form\Extension\Core\Type\SubmitType;
 
 class RechercheController extends AbstractController
@@ -69,17 +65,32 @@ class RechercheController extends AbstractController
         if ($form->isSubmitted() && $form->isValid()) {
             // $form->getData() holds the submitted values
             // but, the original `$task` variable has also been updated
-            $dragon = $form->getData()[0];
-            $pers   = $form->getData()[1];
-
-            // ... perform some action, such as saving the task to the database
-            // for example, if Task is a Doctrine entity, save it!
-            // $entityManager = $this->getDoctrine()->getManager();
-            // $entityManager->persist($task);
-            // $entityManager->flush();
+            $dragon = $form->getData()['id'];
+            $pers   = $form->getData()['nom'];
+            dump($dragon);
+            dump($pers);
 
             //on envoie les choix utilisateurs vers la page combat
-            return $this->redirectToRoute('comabt', array($dragon, $pers));
+            return $this->redirectToRoute('comabt',
+                [
+                    'dragonId'        => $dragon->getId(),
+                    'dragonNom'       => $dragon->getNom(),
+                    'dragonVie'       => $dragon->getVie(),
+                    'dragonPuissance' => $dragon->getPuissance(),
+                    'dragonDefense'   => $dragon->getDefense(),
+                    'dragonDex'       => $dragon->getDex(),
+                    'dragonVitesse'   => $dragon->getVitesse(),
+                    'dragonImg'       => $dragon->getImg(),
+
+                    'persId'        => $pers->getId(),
+                    'persNom'       => $pers->getNom(),
+                    'persVie'       => $pers->getVie(),
+                    'persPuissance' => $pers->getPuissance(),
+                    'persDefense'   => $pers->getDefense(),
+                    'persDex'       => $pers->getDex(),
+                    'persVitesse'   => $pers->getVitesse(),
+                    'persImg'       => $pers->getImg(),
+                ]);
         }
 
 

@@ -3,47 +3,127 @@
 {% block title %}Hello ComabtController !{% endblock %}
 
 {% block body %}
-<style>
-    .example-wrapper { margin: 1em auto; max-width: 800px; width: 95%; font: 18px/1.5 sans-serif; }
-    .example-wrapper code { background: #F5F5F5; padding: 2px 6px; }
-</style>
+    <style>
+        .example-wrapper {
+            margin: 1em auto;
+            max-width: 800px;
+            width: 95%;
+            font: 18px/1.5 sans-serif;
+        }
 
-<div class="example-wrapper">
-    <h1>bienvenue sur notre site ! ✅</h1>
+        .example-wrapper code {
+            background: #F5F5F5;
+            padding: 2px 6px;
+        }
+    </style>
 
-    <div class="row mx-md-n5">
-        <div class="col px-md-5"><div class="p-3 border bg-light">
-                <article>
-                    <h2>Dragon </h2>
-                    <img src="https://via.placeholder.com/150" alt="">
-                    <div class="metadata"> la vie de Dragon  </div>
-                    <div class="metadata"> la puissance de Dragon   </div>
-                    <div class="metadata"> la defence de Dragon  </div>
-                    <div class="metadata"> la dex de Dragon  </div>
-                    <div> la vitesse de Dragon  </div>
+    <div class="example-wrapper">
+        <h1>Le combat!</h1>
 
-                </article>
+        <div class="row mx-md-n5">
+            <div class="col px-md-5">
+                <div class="p-3 border bg-light">
+                    <article>
+                        <h2>{{ dragonNom }}</h2>
+                        <img style="min-width:150px;min-height:150px;background-color:grey;" src="{{ dragonImg }}" alt="pas d'image">
+                        <div class="metadata">vie: {{ dragonVie }}</div>
+                        <div class="metadata">puissance: {{ dragonPuissance }}</div>
+                        <div class="metadata">defense: {{ dragonDefense }}</div>
+                        <div class="metadata">dex: {{ dragonDex }}</div>
+                        <div>vitesse: {{ dragonVitesse }} </div>
+
+                    </article>
+                </div>
+            </div>
+            <div class="col px-md-5">
+                <div class="p-3 border bg-light">
+
+                    <article>
+                        <h2>{{ persNom }}</h2>
+                        <img style="min-width:150px;min-height:150px;background-color:grey;" src="{{ persImg }}" alt="pas d'image">
+                        <div class="metadata">vie: {{ persVie }}</div>
+                        <div class="metadata">puiss: {{ persPuissance }} </div>
+                        <div class="metadata">defense: {{ persDefense }}</div>
+                        <div class="metadata">dex: {{ persDex }}</div>
+                        <div>vitesse: {{ persVitesse }}</div>
+
+                    </article>
+                </div>
             </div>
         </div>
-        <div class="col px-md-5"><div class="p-3 border bg-light">
+        <br/>
+        <h3>Déroulé du combat</h3>
+        <div id="deroulement"
+             style="overflow-y:scroll; width:100%; padding: 10px; font-size:12px; border-radius:5px; background-color:black; color:white; height: 500px;"></div>
 
-                <article>
-                    <h2>Personnalite</h2>
-                    <img src="https://via.placeholder.com/150" alt="">
-                    <div class="metadata"> la vie de  Personnalite</div>
-                    <div class="metadata"> la puissance de Personnalite   </div>
-                    <div class="metadata"> la defence de Personnalite</div>
-                    <div class="metadata"> la dex de Personnalite</div>
-                    <div> la vitesse de Personnalite</div>
 
-                </article>
-        </div>
-        </div>
+        <button style="position: fixed; bottom: 50px; right: 25px;width: 200px;"
+                onclick='combattre("{{ dragonNom }}",{{ dragonVie }},{{ dragonPuissance }},{{ dragonDefense }},{{ dragonDex }},{{ dragonVitesse }},"{{ persNom }}",{{ persVie }},{{ persPuissance }},{{ persDefense }},{{ persDex }},{{ persVitesse }})'
+                class="btn btn-primary btn-lg">Secondary
+        </button>
+
+        <script type="text/javascript">
+            //Fonction combattre, qui permet de réaliser un combat de manière dynamique en javascript
+            function combattre(dNom, dVie, dPuiss, dDef, dDex, dVit, pNom, pVie, pPuiss, pDef, pDex, pVit) {
+                //déclaration de quelques variables qui seront utiles par la suite
+                var i = 0;
+                var perteP;
+                var perteD;
+                var altVit;
+
+                //tant que l'un des combatants n'est pas a 0pv, on continue de tourner
+                while (dVie > 0 && pVie > 0) {
+                    document.getElementById("deroulement").innerHTML += "<br/><p>Tour " + i + "!</p><br/>";
+                    if (dVit > pVit) {
+                        document.getElementById("deroulement").innerHTML += "<br/><p>Le dragon agit!</p>";
+
+                        document.getElementById("deroulement").innerHTML += "<p>" + dNom + " attaque " + pNom + "!</p>";
+                        if (dPuiss > pDef / 2) {
+                            //calcul des dégats selon la défense
+                            perteP = (dPuiss - pDef / 2);
+                            document.getElementById("deroulement").innerHTML += "<p>Ouch!, le perso " + pNom + " à perdu " + perteP + " pv!</p>";
+                            pVie -= perteP;
+                        } else {
+                            document.getElementById("deroulement").innerHTML += "<p>...mais celui-ci à une bonne défense, et ne perds donc qu'un pv!</p>";
+                            pVie -= 1;
+                        }
+                        altVit = dVit;
+                        dVit = pVit;
+                        pVit = altVit;
+
+                    } else {
+                        document.getElementById("deroulement").innerHTML += "<br/><p>Le perso agit!</p>";
+
+                        document.getElementById("deroulement").innerHTML += "<p>" + pNom + " attaque " + dNom + "!</p>";
+                        if (pPuiss > dDef / 2) {
+                            //calcul des dégats selon la défense
+                            perteD = pPuiss - dDef / 2;
+                            document.getElementById("deroulement").innerHTML += "<p>Ouch!, le Dragon " + dNom + " à perdu " + perteD + " pv!</p>";
+                            dVie -= perteD;
+                        } else {
+                            document.getElementById("deroulement").innerHTML += "<p>...mais celui-ci à une bonne défense, et ne perds donc qu'un pv!</p>";
+                            dVie -= 1;
+                        }
+                        altVit = dVit;
+                        dVit = pVit;
+                        pVit = altVit;
+                    }
+                    //on incrémente i, la varible servant à compter les tours
+                    i++;
+                }
+
+
+                //On affiche le vainqueur dans le déroulement, et on envoie aussi une alerte javascript
+                if (pVie <= 0) {
+                    document.getElementById("deroulement").innerHTML += "<br/><p>le Dragon " + dNom + " a gagné!</p>";
+                    alert("le Dragon " + dNom + " a gagné!");
+                } else if (dVie <= 0) {
+                    document.getElementById("deroulement").innerHTML += "<br/><p>le Perso " + pNom + " a gagné!</p>";
+                    alert("le Perso " + pNom + " a gagné!");
+                }
+            }
+        </script>
+
+
     </div>
-
-
-    <button type="button" style="width: 200px;" class="btn btn-primary btn-lg">Secondary</button>
-
-
-</div>
 {% endblock %}
