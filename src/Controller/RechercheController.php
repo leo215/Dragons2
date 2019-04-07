@@ -23,44 +23,43 @@ class RechercheController extends AbstractController
     public function index(Request $request)
     {
         $repository = $this->getDoctrine()->getRepository(Dragon::class);
-        $dragons = $repository->findAll();
+        $dragons    = $repository->findAll();
 
         $repository_2 = $this->getDoctrine()->getRepository(Personnage::class);
-        $personnages = $repository_2->findAll();
+        $personnages  = $repository_2->findAll();
 
         $choices = [];
-        $i=0;
-        foreach($dragons as $value)
-        {
-            $choices[$i+1] = $value;
+        $i       = 0;
+        foreach ($dragons as $value) {
+            $choices[$i + 1] = $value;
             $i++;
         }
 
         $dragon = new Dragon();
-        $pers = new Personnage();
+        $pers   = new Personnage();
 
-        $builder = $this->createFormBuilder(array($dragon,$pers));
-        $builder->add('id',entityType::class,
+        $builder = $this->createFormBuilder(array($dragon, $pers));
+        $builder->add('id', entityType::class,
             [
-            'class' => Dragon::class,
-            'choice_label' => 'nom',
-            'multiple' => false,
-            'expanded' => true,
-            ]
-        );
-        $builder->add('nom',entityType::class,
-            [
-                'class' => Personnage::class,
+                'class'        => Dragon::class,
                 'choice_label' => 'nom',
-                'multiple' => false,
-                'expanded' => true,
+                'multiple'     => false,
+                'expanded'     => true,
+            ]
+        );
+        $builder->add('nom', entityType::class,
+            [
+                'class'        => Personnage::class,
+                'choice_label' => 'nom',
+                'multiple'     => false,
+                'expanded'     => true,
             ]
         );
 
-        $builder->add('valider',SubmitType::class,
+        $builder->add('valider', SubmitType::class,
             [
                 'label' => 'valider',
-                'attr' => ['class' => 'btn btn-primary btn-lg'],
+                'attr'  => ['class' => 'btn btn-primary btn-lg'],
             ]
         );
         $form = $builder->getForm();
@@ -71,7 +70,7 @@ class RechercheController extends AbstractController
             // $form->getData() holds the submitted values
             // but, the original `$task` variable has also been updated
             $dragon = $form->getData()[0];
-            $pers = $form->getData()[1];
+            $pers   = $form->getData()[1];
 
             // ... perform some action, such as saving the task to the database
             // for example, if Task is a Doctrine entity, save it!
@@ -80,15 +79,15 @@ class RechercheController extends AbstractController
             // $entityManager->flush();
 
             //on envoie les choix utilisateurs vers la page combat
-            return $this->redirectToRoute('comabt', array($dragon,$pers));
+            return $this->redirectToRoute('comabt', array($dragon, $pers));
         }
 
 
         return $this->render('recherche/index.html.twig', [
             'controller_name' => 'RechercheController',
-            'dragons' => $dragons,
-            'personnages' => $personnages,
-            'form' => $form->createView(), //creating my form
+            'dragons'         => $dragons,
+            'personnages'     => $personnages,
+            'form'            => $form->createView(), //creating my form
         ]);
     }
 }

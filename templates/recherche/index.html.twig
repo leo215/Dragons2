@@ -3,98 +3,106 @@
 {% block title %}Hello RechercheController!{% endblock %}
 
 {% block body %}
-<style>
-    .example-wrapper { margin: 1em auto; max-width: 800px; width: 95%; font: 18px/1.5 sans-serif; }
-    .example-wrapper code { background: #F5F5F5; padding: 2px 6px; }
-    #form_valider {position:fixed; bottom:25px; right:25px;}
-</style>
+    <style>
+        .example-wrapper {
+            margin: 1em auto;
+            max-width: 800px;
+            width: 95%;
+            font: 18px/1.5 sans-serif;
+        }
+
+        .example-wrapper code {
+            background: #F5F5F5;
+            padding: 2px 6px;
+        }
+        
+        #form_valider {
+            position: fixed;
+            bottom: 25px;
+            right: 25px;
+        }
+    </style>
 
 
-<div class="example-wrapper">
-    <h2>choisir un dragon et une personne et valide</h2>
-    <br/>
+    <div class="example-wrapper">
+        <h2>choisir un dragon et une personne et valide</h2>
+        <br/>
 
-    {{ form_start(form) }}
-    {{ form_errors(form) }}
-    {% set i = 0 %}
-    {% set j = 0 %}
-    <div class="row mx-md-n5">
-
-
-        <div class="col px-md-5">
-            <h3>Dragons</h3>
-            <div class="p-3 border bg-light">
+        {{ form_start(form) }}
+        {{ form_errors(form) }}
+        {% set i = 0 %}
+        {% set j = 0 %}
+        <div class="row mx-md-n5">
 
 
+            <div class="col px-md-5">
+                <h3>Dragons</h3>
+                <div class="p-3 border bg-light">
 
 
-                {% for choice in form.id %}
+                    {% for choice in form.id %}
 
-                    <hr/>
-                    <article onclick="choisirDragon({{ i }})">
-                        <p>{{ form_errors(choice) }}</p>
-                        <p>pick: {{ form_widget(choice) }}</p>
-                        <h2>{{ dragons[i].nom }}</h2>
-                        <img src="{{ dragons[i].img }}" width="150" height="150" alt="pas de fichier">
-                        <div class="metadata"> vie: {{ dragons[i].vie }} </div>
-                        <div class="metadata"> puissance: {{ dragons[i].puissance }} </div>
-                        <div class="metadata"> défense: {{ dragons[i].defense }}</div>
-                        <div class="metadata"> dextérité:  {{ dragons[i].dex }}</div>
-                        <div class="metadata"> vitesse: {{ dragons[i].vitesse }}</div>
+                        <hr/>
+                        <article onclick="choisirDragon({{ i }})">
+                            <p>{{ form_errors(choice) }}</p>
+                            <p>pick: {{ form_widget(choice) }}</p>
+                            <h2>{{ dragons[i].nom }}</h2>
+                            <img src="{{ dragons[i].img }}" width="150" height="150" alt="pas de fichier">
+                            <div class="metadata"> vie: {{ dragons[i].vie }} </div>
+                            <div class="metadata"> puissance: {{ dragons[i].puissance }} </div>
+                            <div class="metadata"> défense: {{ dragons[i].defense }}</div>
+                            <div class="metadata"> dextérité: {{ dragons[i].dex }}</div>
+                            <div class="metadata"> vitesse: {{ dragons[i].vitesse }}</div>
 
-                    </article>
-                    {%set i = i+1 %}
-                {% endfor %}
+                        </article>
+                        {% set i = i+1 %}
+                    {% endfor %}
+                </div>
             </div>
-        </div>
 
 
-        <div class="col px-md-5">
-            <h3>Personnages</h3>
-            <div class="p-3 border bg-light">
-                {% for choice in form.nom %}
+            <div class="col px-md-5">
+                <h3>Personnages</h3>
+                <div class="p-3 border bg-light">
+                    {% for choice in form.nom %}
 
-                    <hr/>
-                    <article onclick="choisirPers({{ j }})">
-                        <p>{{ form_errors(choice) }}</p>
-                        <p>pick: {{ form_widget(choice) }}</p>
-                        <h2>{{ personnages[j].nom }}</h2>
-                        <img src="{{ personnages[j].img }}" width="150" height="150" alt="pas de fichier">
-                        <div class="metadata"> vie: {{ personnages[j].vie }} </div>
-                        <div class="metadata"> puissance: {{ personnages[j].puissance }} </div>
-                        <div class="metadata"> défense: {{ personnages[j].defense }}</div>
-                        <div class="metadata"> dextérité:  {{ personnages[j].dex }}</div>
-                        <div class="metadata"> vitesse: {{ personnages[j].vitesse }}</div>
+                        <hr/>
+                        <article onclick="choisirPers({{ j }})">
+                            <p>{{ form_errors(choice) }}</p>
+                            <p>pick: {{ form_widget(choice) }}</p>
+                            <h2>{{ personnages[j].nom }}</h2>
+                            <img src="{{ personnages[j].img }}" width="150" height="150" alt="pas de fichier">
+                            <div class="metadata"> vie: {{ personnages[j].vie }} </div>
+                            <div class="metadata"> puissance: {{ personnages[j].puissance }} </div>
+                            <div class="metadata"> défense: {{ personnages[j].defense }}</div>
+                            <div class="metadata"> dextérité: {{ personnages[j].dex }}</div>
+                            <div class="metadata"> vitesse: {{ personnages[j].vitesse }}</div>
 
-                    </article>
-                    {%set j = j+1 %}
-                {% endfor %}
+                        </article>
+                        {% set j = j+1 %}
+                    {% endfor %}
+                </div>
             </div>
-        </div>
 
+        </div>
+        {{ form_row(form.valider) }}
+        {{ form_end(form) }}
     </div>
-    {{ form_row(form.valider) }}
-    {{ form_end(form) }}
-</div>
     <script type="text/javascript">
-        function choisirDragon(nb)
-        {
-            nb+=1;
-            var id = "form_id_"+nb.toString();
+        function choisirDragon(nb) {
+            nb += 1;
+            var id = "form_id_" + nb.toString();
             var varChoix = document.getElementById(id);
-            if(varChoix.checked == false)
-            {
+            if (varChoix.checked == false) {
                 varChoix.checked = true;
             }
         }
 
-        function choisirPers(nb)
-        {
-            nb+=1;
-            var id = "form_nom_"+nb.toString();
+        function choisirPers(nb) {
+            nb += 1;
+            var id = "form_nom_" + nb.toString();
             var varChoix = document.getElementById(id)
-            if(varChoix.checked == false)
-            {
+            if (varChoix.checked == false) {
                 varChoix.checked = true;
             }
         }
