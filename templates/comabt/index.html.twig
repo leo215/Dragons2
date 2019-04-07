@@ -1,6 +1,6 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Hello ComabtController !{% endblock %}
+{% block title %}Combat{% endblock %}
 
 {% block body %}
     <style>
@@ -25,7 +25,7 @@
                 <div class="p-3 border bg-light">
                     <article>
                         <h2>{{ dragonNom }}</h2>
-                        <img style="min-width:150px;min-height:150px;background-color:grey;" src="{{ dragonImg }}" alt="pas d'image">
+                        <img style="min-width:150px;min-height:150px;max-height:300px;max-width:300px;background-color:grey;" src="{{ dragonImg }}" alt="pas d'image">
                         <div class="metadata">vie: {{ dragonVie }}</div>
                         <div class="metadata">puissance: {{ dragonPuissance }}</div>
                         <div class="metadata">defense: {{ dragonDefense }}</div>
@@ -40,13 +40,12 @@
 
                     <article>
                         <h2>{{ persNom }}</h2>
-                        <img style="min-width:150px;min-height:150px;background-color:grey;" src="{{ persImg }}" alt="pas d'image">
+                        <img style="min-width:150px;min-height:150px;max-height:300px;max-width:300px;background-color:grey;" src="{{ persImg }}" alt="pas d'image">
                         <div class="metadata">vie: {{ persVie }}</div>
                         <div class="metadata">puiss: {{ persPuissance }} </div>
                         <div class="metadata">defense: {{ persDefense }}</div>
                         <div class="metadata">dex: {{ persDex }}</div>
                         <div>vitesse: {{ persVitesse }}</div>
-
                     </article>
                 </div>
             </div>
@@ -59,7 +58,7 @@
 
         <button style="position: fixed; bottom: 50px; right: 25px;width: 200px;"
                 onclick='combattre("{{ dragonNom }}",{{ dragonVie }},{{ dragonPuissance }},{{ dragonDefense }},{{ dragonDex }},{{ dragonVitesse }},"{{ persNom }}",{{ persVie }},{{ persPuissance }},{{ persDefense }},{{ persDex }},{{ persVitesse }})'
-                class="btn btn-primary btn-lg">Secondary
+                class="btn btn-primary btn-lg">Lancer le combat!
         </button>
 
         <script type="text/javascript">

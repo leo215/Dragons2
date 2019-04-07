@@ -15,7 +15,7 @@ class ComabtController extends AbstractController
     public function index(Request $request)
     {
         //Si l'un des deux params est null, on renvoie sur la page recherche pour qu'un choix soit fait
-        if (is_null($request->query->get('dragonId')) || is_null($request->query->get('persId'))) {
+        if (is_null($request->query->get('dragonNom')) || is_null($request->query->get('persNom'))) {
             return $this->redirectToRoute('recherche');
         }
 
@@ -28,7 +28,7 @@ class ComabtController extends AbstractController
             'dragonDefense'   => $request->query->get('dragonDefense'),
             'dragonDex'       => $request->query->get('dragonDex'),
             'dragonVitesse'   => $request->query->get('dragonVitesse'),
-            'dragonImg'       => $request->query->get('DragonImg'),
+            'dragonImg'       => $request->query->get('dragonImg'),
 
             'persNom'       => $request->query->get('persNom'),
             'persVie'       => $request->query->get('persVie'),
