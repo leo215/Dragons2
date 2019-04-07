@@ -2,12 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="84527d7e-4329-40d0-b96c-84dfb1dc55ea" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/src/Controller/ComabtController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/ComabtController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/accueil.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/accueil.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/admin/enregistre.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/admin/enregistre.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/base.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/base.html.twig" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/templates/comabt/index.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/comabt/index.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/recherche/index.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/recherche/index.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/dragon/index.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/dragon/index.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/personnage/index.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/personnage/index.html.twig" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/vendor/composer/" />
     <ignored path="$PROJECT_DIR$/vendor/doctrine/annotations/" />
@@ -139,8 +136,26 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/templates/comabt/index.html.twig">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="58">
-              <caret line="22" column="58" selection-start-line="22" selection-start-column="58" selection-end-line="22" selection-end-column="58" />
+            <state relative-caret-position="262">
+              <caret line="58" column="26" lean-forward="true" selection-start-line="58" selection-start-column="26" selection-end-line="58" selection-end-column="26" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/templates/dragon/index.html.twig">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="211">
+              <caret line="21" column="60" selection-start-line="21" selection-start-column="60" selection-end-line="21" selection-end-column="60" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/templates/personnage/index.html.twig">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="349">
+              <caret line="28" column="61" selection-start-line="28" selection-start-column="61" selection-end-line="28" selection-end-column="61" />
             </state>
           </provider>
         </entry>
@@ -177,14 +192,14 @@
         <option value="$PROJECT_DIR$/templates/admin/ajout.html.twig" />
         <option value="$PROJECT_DIR$/templates/admin/index.html.twig" />
         <option value="$PROJECT_DIR$/src/Controller/DragonController.php" />
-        <option value="$PROJECT_DIR$/templates/dragon/index.html.twig" />
-        <option value="$PROJECT_DIR$/templates/personnage/index.html.twig" />
         <option value="$PROJECT_DIR$/src/Controller/PersonnageController.php" />
         <option value="$PROJECT_DIR$/templates/admin/enregistre.html.twig" />
         <option value="$PROJECT_DIR$/templates/recherche/index.html.twig" />
         <option value="$PROJECT_DIR$/templates/base.html.twig" />
         <option value="$PROJECT_DIR$/templates/accueil.html.twig" />
         <option value="$PROJECT_DIR$/src/Controller/ComabtController.php" />
+        <option value="$PROJECT_DIR$/templates/dragon/index.html.twig" />
+        <option value="$PROJECT_DIR$/templates/personnage/index.html.twig" />
         <option value="$PROJECT_DIR$/templates/comabt/index.html.twig" />
       </list>
     </option>
@@ -330,19 +345,19 @@
             <path>
               <item name="Dragons2-" type="b2602c69:ProjectViewProjectNode" />
               <item name="Dragons2-" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="Controller" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Dragons2-" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Dragons2-" type="462c0819:PsiDirectoryNode" />
               <item name="templates" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="Dragons2-" type="b2602c69:ProjectViewProjectNode" />
               <item name="Dragons2-" type="462c0819:PsiDirectoryNode" />
               <item name="templates" type="462c0819:PsiDirectoryNode" />
-              <item name="comabt" type="462c0819:PsiDirectoryNode" />
+              <item name="dragon" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Dragons2-" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Dragons2-" type="462c0819:PsiDirectoryNode" />
+              <item name="templates" type="462c0819:PsiDirectoryNode" />
+              <item name="personnage" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -389,7 +404,7 @@
       <workItem from="1553775840672" duration="3323000" />
       <workItem from="1553941273913" duration="13213000" />
       <workItem from="1554631139416" duration="1075000" />
-      <workItem from="1554633043039" duration="13410000" />
+      <workItem from="1554633043039" duration="13983000" />
     </task>
     <task id="LOCAL-00001" summary="ajoute des donnée">
       <created>1553506216540</created>
@@ -409,7 +424,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="54170000" />
+    <option name="totallyTimeSpent" value="54743000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
@@ -619,20 +634,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/templates/personnage/index.html.twig">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="179">
-          <caret line="18" lean-forward="true" selection-start-line="18" selection-end-line="18" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/templates/dragon/index.html.twig">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="111">
-          <caret line="14" selection-start-line="14" selection-end-line="29" selection-end-column="6" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/Form/DragonType.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="289">
@@ -705,10 +706,24 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/templates/personnage/index.html.twig">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="349">
+          <caret line="28" column="61" selection-start-line="28" selection-start-column="61" selection-end-line="28" selection-end-column="61" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/dragon/index.html.twig">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="211">
+          <caret line="21" column="60" selection-start-line="21" selection-start-column="60" selection-end-line="21" selection-end-column="60" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/templates/comabt/index.html.twig">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="58">
-          <caret line="22" column="58" selection-start-line="22" selection-start-column="58" selection-end-line="22" selection-end-column="58" />
+        <state relative-caret-position="262">
+          <caret line="58" column="26" lean-forward="true" selection-start-line="58" selection-start-column="26" selection-end-line="58" selection-end-column="26" />
         </state>
       </provider>
     </entry>

@@ -46,19 +46,22 @@
         </div>
     </div>
 </div>
+    <div class="jumbotron p-3 mb-2 bg-success text-white"">
+        <h1 class="display-4"> {% if  personnagevitesse  > 44  %}
+                {% if  personnagevie < dragonvie  %}
+                    <h1> Félicitation ta gagné le dragon</h1>
+                {% else %}
+                    <h1> Le dragon a gagné</h1>
+                {% endif %}
+            {% else %}
+                {% if  personnagepuissance >dragonpuissance  %}
+                    <h1> Félicitation ta gagné le dragon</h1>
+                {% else %}
+                    <h1> Le dragon a gagné</h1>
+                {% endif %}
+            {% endif %}</h1>
+
+    </div>
 
 
-    {% if  personnagevitesse  > 44  %}
-        {% if  personnagevie < 50  %}
-            <h1> Félicitation ta gagné le dragon</h1>
-        {% else %}
-            <h1> Le dragon a gagné</h1>
-        {% endif %}
-    {% else %}
-        {% if  personnagepuissance >100  %}
-            <h1> Félicitation ta gagné le dragon</h1>
-        {% else %}
-            <h1> Le dragon a gagné</h1>
-        {% endif %}
-    {% endif %}
 {% endblock %}
