@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "07581aa1a354aad28d0435b57b02a4f0",
+    "content-hash": "907bc09351359e24525b235428f5f334",
     "packages": [
         {
             "name": "doctrine/annotations",
@@ -4447,7 +4447,7 @@
         },
         {
             "name": "symfony/security-csrf",
-            "version": "v4.2.4",
+            "version": "v4.2.5",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/security-csrf.git",

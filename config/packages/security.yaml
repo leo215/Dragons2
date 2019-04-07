@@ -1,5 +1,14 @@
 security:
     # https://symfony.com/doc/current/security.html#where-do-users-come-from-user-providers
+
+    encoders:
+        # use your user class name here
+        App\Entity\Admin:
+            # bcrypt or argon2i are recommended
+            # argon2i is more secure, but requires PHP 7.2 or the Sodium extension
+            algorithm: bcrypt
+            cost: 12
+
     providers:
         in_memory: { memory: ~ }
     firewalls:
@@ -7,11 +16,12 @@ security:
             pattern: ^/(_(profiler|wdt)|css|images|js)/
             security: false
         main:
-            anonymous: true
+            anonymous: ~
 
-            # activate different ways to authenticate
-
-            # http_basic: true
+            http_basic: ~
+            guard:
+                authenticators:
+                    - App\Security\LoginFormAuthenticator
             # https://symfony.com/doc/current/security.html#a-configuring-how-your-users-will-authenticate
 
             # form_login: true
