@@ -7,20 +7,24 @@
     .example-wrapper { margin: 1em auto; max-width: 800px; width: 95%; font: 18px/1.5 sans-serif; }
     .example-wrapper code { background: #F5F5F5; padding: 2px 6px; }
 </style>
+    <div class="jumbotron">
+        <h1 class="display-4">Combat</h1>
 
+        <hr class="my-4">
+    </div>
 <div class="example-wrapper">
     <h1>bienvenue sur notre site ! ✅</h1>
 
     <div class="row mx-md-n5">
         <div class="col px-md-5"><div class="p-3 border bg-light">
                 <article>
-                    <h2>Dragon </h2>
+                    <div>Le Nom de Dragon {{ dragonnom }} </div>
                     <img src="https://via.placeholder.com/150" alt="">
-                    <div class="metadata"> la vie de Dragon  </div>
-                    <div class="metadata"> la puissance de Dragon   </div>
-                    <div class="metadata"> la defence de Dragon  </div>
-                    <div class="metadata"> la dex de Dragon  </div>
-                    <div> la vitesse de Dragon  </div>
+                    <div class="metadata"> La durée de vie{{ dragonvie }} </div>
+                    <div class="metadata"> la puissance  {{ dragonpuissance }} </div>
+                    <div class="metadata"> la defence{{ dragondefense }} </div>
+                    <div class="metadata"> la vitesse{{ dragonvitesse }} </div>
+                    <div> la dex {{ dragondex }}</div>
 
                 </article>
             </div>
@@ -28,22 +32,33 @@
         <div class="col px-md-5"><div class="p-3 border bg-light">
 
                 <article>
-                    <h2>Personnalite</h2>
+                    <div>Le Nom de personnage {{ personnagenom }} </div>
                     <img src="https://via.placeholder.com/150" alt="">
-                    <div class="metadata"> la vie de  Personnalite</div>
-                    <div class="metadata"> la puissance de Personnalite   </div>
-                    <div class="metadata"> la defence de Personnalite</div>
-                    <div class="metadata"> la dex de Personnalite</div>
-                    <div> la vitesse de Personnalite</div>
+                    <div class="metadata">La durée de vie {{ personnagevie }}  </div>
+                    <div class="metadata">La puissance  {{ personnagepuissance }}  </div>
+                    <div class="metadata">La défanse  {{ personnagedefense }} </div>
+                    <div>La vitesse {{ personnagevitesse }}  </div>
+                    <div class="metadata">La dex {{ personnagedex }} </div>
 
                 </article>
-        </div>
+
+            </div>
         </div>
     </div>
-
-
-    <button type="button" style="width: 200px;" class="btn btn-primary btn-lg">Secondary</button>
-
-
 </div>
+
+
+    {% if  personnagevitesse  > 44  %}
+        {% if  personnagevie < 50  %}
+            <h1> Félicitation ta gagné le dragon</h1>
+        {% else %}
+            <h1> Le dragon a gagné</h1>
+        {% endif %}
+    {% else %}
+        {% if  personnagepuissance >100  %}
+            <h1> Félicitation ta gagné le dragon</h1>
+        {% else %}
+            <h1> Le dragon a gagné</h1>
+        {% endif %}
+    {% endif %}
 {% endblock %}
